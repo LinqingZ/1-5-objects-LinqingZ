@@ -49,7 +49,11 @@ const person1 = {
 // console.log(person1.friends)
 
 
-const listHobbies = () => {
+const listHobbies = (person) => {
+  // if (person && person.hobbies && person.hobbies.length > 0){}
+  for (let hobby of person.hobbies){
+    console.log(`${person.name} likes ${hobby}.`)
+  }
 };
 
 const getNextOpponent = (team) => {
@@ -89,7 +93,9 @@ const fighters = {
 
 //console.log(getNextOpponent(fighters))
 
-const listAllKeys = () => {
+// Q8
+const listAllKeys = (anObject) => {
+  return Object.keys(anObject)
 };
 
 const listAllValues = (obj) => {
@@ -98,8 +104,34 @@ const listAllValues = (obj) => {
 //console.log(listAllValues(fighters))
 
 
-const convertToMatrix = () => {
+// Q10
+const convertToMatrix = (objects) => {
+  let output = []
+  if (objects.length>0){
+    // console.log(`object inside`)
+    output.push(Object.keys(objects[0]))
+    // console.log(Object.keys(objects[0]))
+    for (let obj of objects){
+      output.push(Object.values(obj))
+    }
+  return output
+  }else{
+    return output
+  }
 };
+
+const users = [
+  {
+    name: 'Sara',
+    age: 30,
+    bio: 'What a legend',
+  },
+  {
+    name: 'Bob',
+    age: 30,
+    bio: "Kind of mean if we're being honest",
+  },
+];
 
 module.exports = {
   coolGreeting,
